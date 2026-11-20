@@ -1,0 +1,6 @@
+{
+  "name": "Kalura — Living Heritage Marketplace",
+  "description": "A verified digital home connecting Odisha's artisans, traditional food makers, folk artists, and cultural experiences with curious buyers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

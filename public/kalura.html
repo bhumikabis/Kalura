@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalura — Odisha’s Living Heritage, Verified &amp; Within Reach</title>
+    <meta
+      name="description"
+      content="Kalura connects local artisans, traditional food makers, folk performers, and cultural experiences across Odisha with buyers who value verified authenticity and daily hygiene."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Odia:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              terracotta: '#A64B32',
+              forest: '#354C3C',
+              gold: '#D5AD59',
+              ivory: '#F7F1E5',
+              brown: '#49352D',
+            },
+            fontFamily: {
+              display: ['Manrope', 'sans-serif'],
+              sans: ['DM Sans', 'sans-serif'],
+              odia: ['Noto Sans Odia', 'DM Sans', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+        background-color: #F7F1E5;
+        color: #49352D;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-ivory text-brown antialiased selection:bg-terracotta/15 selection:text-terracotta">
+    <div class="min-h-screen flex flex-col">
+      <!-- Sticky Top Bar -->
+      <header class="sticky top-0 z-40 h-16 bg-ivory/95 backdrop-blur-md border-b border-brown/10">
+        <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-8">
+          <a href="#top" class="inline-flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-forest whitespace-nowrap shrink-0">
+            <svg viewBox="0 0 40 40" fill="none" class="w-7 h-7 text-terracotta" aria-hidden="true">
+              <circle cx="20" cy="20" r="17.5" stroke="currentColor" stroke-width="1.75" />
+              <circle cx="20" cy="20" r="11.5" stroke="currentColor" stroke-width="1.25" stroke-dasharray="2 2.5" />
+              <circle cx="20" cy="20" r="4" fill="#D5AD59" stroke="currentColor" stroke-width="1.25" />
+              <path d="M20 2.5V8.5M20 31.5V37.5M2.5 20H8.5M31.5 20H37.5M7.6 7.6L11.8 11.8M28.2 28.2L32.4 32.4M32.4 7.6L28.2 11.8M11.8 28.2L7.6 32.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span class="font-display">Kalura</span>
+          </a>
+
+          <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-7 text-sm font-medium text-brown/80">
+            <a href="#pillars" class="hover:text-terracotta hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0">Pillars</a>
+            <a href="#features" class="hover:text-terracotta hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0">Features</a>
+            <a href="#how-it-works" class="hover:text-terracotta hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0">How It Works</a>
+            <a href="#vision" class="hover:text-terracotta hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0">Vision</a>
+          </nav>
+
+          <div class="flex items-center gap-3 shrink-0">
+            <button
+              type="button"
+              data-open-modal="Buyer / Cultural Explorer"
+              class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-terracotta text-white text-sm font-semibold hover:bg-[#8E3E28] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            >
+              Get Early Access
+            </button>
+            <button
+              type="button"
+              id="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              class="md:hidden w-11 h-11 rounded-lg flex items-center justify-center text-brown hover:bg-brown/5 transition-colors cursor-pointer"
+            >
+              <svg id="menu-icon-open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+              <svg id="menu-icon-close" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-brown/12 px-4 py-4 shadow-md">
+          <nav class="flex flex-col space-y-1">
+            <a href="#pillars" class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-brown hover:bg-ivory">Pillars</a>
+            <a href="#features" class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-brown hover:bg-ivory">Features</a>
+            <a href="#how-it-works" class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-brown hover:bg-ivory">How It Works</a>
+            <a href="#vision" class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-brown hover:bg-ivory">Vision</a>
+            <a href="#faq" class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-brown hover:bg-ivory">FAQ</a>
+            <div class="pt-2">
+              <button
+                type="button"
+                data-open-modal="Buyer / Cultural Explorer"
+                class="w-full py-3 px-4 rounded-lg bg-terracotta text-white text-sm font-semibold hover:bg-[#8E3E28] transition-colors cursor-pointer"
+              >
+                Get Early Access
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top" class="flex-1">
+        <!-- Hero -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-16 lg:pb-24">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+            <div class="lg:col-span-6 flex flex-col justify-between gap-8 py-2">
+              <div class="space-y-6">
+                <p class="text-sm font-semibold text-terracotta">Five Pillars · One Living Heritage</p>
+                <h1 class="font-extrabold tracking-tight text-forest leading-[1.1]" style="font-size: clamp(2.25rem, 4vw, 3.75rem); text-wrap: balance;">
+                  Odisha’s living culture, verified and within reach.
+                </h1>
+                <p class="text-base sm:text-lg text-brown/85 leading-relaxed max-w-xl">
+                  Kalura brings handcrafted textiles, heirloom cuisine, folk performances, festivals, and hands-on workshops into one connected home—linking buyers directly to verified local creators without excluding makers who lack smartphones.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-1">
+                  <button
+                    type="button"
+                    data-open-modal="Buyer / Cultural Explorer"
+                    class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-terracotta text-white text-sm font-semibold hover:bg-[#8E3E28] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  >
+                    <span>Get Early Access</span>
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </button>
+                  <a href="#pillars" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white border border-brown/15 text-forest text-sm font-semibold hover:border-forest/40 transition-colors whitespace-nowrap shrink-0">
+                    Explore the Five Pillars
+                  </a>
+                </div>
+              </div>
+
+              <div class="pt-6 border-t border-brown/12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <p class="font-semibold text-forest">Master-Artisan Sign-Off</p>
+                  <p class="text-xs text-brown/70 mt-0.5">AI checks + cooperative approval before listing</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-forest">Daily Kitchen Proof</p>
+                  <p class="text-xs text-brown/70 mt-0.5">Time- and GPS-stamped live captures</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-forest">Phone-Free Inclusion</p>
+                  <p class="text-xs text-brown/70 mt-0.5">Odia voice tools or local volunteer visits</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Product Preview -->
+            <div class="lg:col-span-6">
+              <div class="bg-white rounded-2xl border border-brown/12 shadow-sm overflow-hidden flex flex-col justify-between h-full">
+                <div class="px-5 pt-5 pb-4 border-b border-brown/10 flex flex-wrap items-center justify-between gap-3 bg-ivory/55">
+                  <div>
+                    <p class="text-xs font-medium text-terracotta">Platform Preview</p>
+                    <p class="text-sm font-semibold text-brown font-display">Built-in Trust &amp; Creator Tools</p>
+                  </div>
+                  <div class="inline-flex items-center p-1 bg-ivory rounded-lg border border-brown/10" role="tablist">
+                    <button type="button" data-preview-tab="authenticity" class="preview-tab px-3 py-1.5 text-xs font-medium rounded-md bg-forest text-white whitespace-nowrap shrink-0 cursor-pointer">Craft QR</button>
+                    <button type="button" data-preview-tab="kitchen" class="preview-tab px-3 py-1.5 text-xs font-medium rounded-md text-brown/75 hover:text-brown whitespace-nowrap shrink-0 cursor-pointer">Kitchen Proof</button>
+                    <button type="button" data-preview-tab="onboarding" class="preview-tab px-3 py-1.5 text-xs font-medium rounded-md text-brown/75 hover:text-brown whitespace-nowrap shrink-0 cursor-pointer">Odia Voice</button>
+                  </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between gap-5">
+                  <div id="preview-authenticity" class="preview-panel space-y-5">
+                    <div class="flex items-start justify-between gap-4">
+                      <div class="space-y-1">
+                        <p class="text-xs text-brown/65">Kala · Cuttack Tarakasi Cluster · Verified Listing</p>
+                        <h3 class="text-xl font-bold text-brown leading-snug">Handcrafted Silver Filigree Lotus Brooch</h3>
+                        <p class="text-sm text-brown/80">Crafted by Subhashree Behera · 18-year filigree artisan</p>
+                      </div>
+                      <div class="text-right shrink-0">
+                        <p class="text-xl font-bold text-forest tabular-nums">₹2,450</p>
+                        <p class="text-xs text-brown/65">Fair-price verified</p>
+                      </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                      <div class="p-4 rounded-xl bg-ivory/70 border border-brown/10 space-y-1.5">
+                        <p class="text-sm font-semibold text-forest">AI Texture &amp; Pattern Check</p>
+                        <p class="text-xs text-brown/75 leading-relaxed">Silver wire gauge, filigree motif density, and material rate cross-checked against district pricing.</p>
+                      </div>
+                      <div class="p-4 rounded-xl bg-ivory/70 border border-brown/10 space-y-1.5">
+                        <p class="text-sm font-semibold text-terracotta">Master Weaver / Co-op Sign-Off</p>
+                        <p class="text-xs text-brown/75 leading-relaxed">Approved by Cuttack Artisan Guild before publication. Post-delivery photo match enabled.</p>
+                      </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-forest text-ivory flex items-center justify-between gap-4">
+                      <div>
+                        <p class="text-sm font-semibold text-white">Unique QR Provenance Record</p>
+                        <p class="text-xs text-ivory/80">Scan tag on arrival to inspect artisan profile, origin, and verification log.</p>
+                      </div>
+                      <span class="text-xs font-medium text-gold whitespace-nowrap shrink-0">Protective Box Included</span>
+                    </div>
+                  </div>
+
+                  <div id="preview-kitchen" class="preview-panel hidden space-y-5">
+                    <div class="flex items-start justify-between gap-4">
+                      <div class="space-y-1">
+                        <p class="text-xs text-brown/65">Rasa · Traditional Odia Kitchen · Daily Proof</p>
+                        <h3 class="text-xl font-bold text-brown leading-snug">Slow-Roasted Chhenapoda &amp; Poda Pitha</h3>
+                        <p class="text-sm text-brown/80">Prepared fresh by Mamata Mohanty · Buxi Bazaar, Cuttack</p>
+                      </div>
+                      <div class="text-right shrink-0">
+                        <p class="text-xl font-bold text-forest tabular-nums">₹380</p>
+                        <p class="text-xs text-brown/65">500g wood-baked box</p>
+                      </div>
+                    </div>
+                    <div class="rounded-xl bg-forest text-ivory p-5 space-y-4">
+                      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/15 pb-3 text-sm">
+                        <span class="font-semibold text-white tabular-nums">Captured Today · 07:42 AM IST</span>
+                        <span class="text-xs text-gold tabular-nums">20.4625° N, 85.8830° E · Cuttack</span>
+                      </div>
+                      <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-white/10 rounded-lg p-3"><p class="font-semibold text-white">In-App Live Capture</p><p class="text-ivory/80 mt-1">Old gallery photos blocked automatically.</p></div>
+                        <div class="bg-white/10 rounded-lg p-3"><p class="font-semibold text-white">Clean Prep Surface</p><p class="text-ivory/80 mt-1">Utensils &amp; workspace verified before prep.</p></div>
+                        <div class="bg-white/10 rounded-lg p-3"><p class="font-semibold text-white">Quality Margin +4%</p><p class="text-ivory/80 mt-1">Earned via unbroken daily hygiene streak.</p></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="preview-onboarding" class="preview-panel hidden space-y-5">
+                    <div class="space-y-1">
+                      <p class="text-xs text-brown/65">Creator Digital Tools · Inclusive Access</p>
+                      <h3 class="text-xl font-bold text-brown leading-snug">Odia Voice-to-Listing &amp; Seller Points</h3>
+                      <p class="text-sm text-brown/80">Speak in your regional language—or request a local volunteer visit if you do not own a smartphone.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-ivory border border-brown/12 space-y-3">
+                      <p class="text-xs font-semibold text-terracotta">Odia Voice Input Sample</p>
+                      <p class="text-sm text-brown font-odia bg-white p-3 rounded-lg border border-brown/10">“ଏହା କଟକର ହାତତିଆରି ସମ୍ବଲପୁରୀ ସୂତା ଶାଢ଼ୀ, ଦାମ୍ ୩,୨୦୦ ଟଙ୍କା।”</p>
+                      <div class="grid grid-cols-3 gap-2 text-xs">
+                        <div class="bg-white p-2.5 rounded-lg border border-brown/10"><p class="text-brown/60">Item</p><p class="font-semibold text-brown">Sambalpuri Saree</p></div>
+                        <div class="bg-white p-2.5 rounded-lg border border-brown/10"><p class="text-brown/60">Origin</p><p class="font-semibold text-brown">Cuttack Handloom</p></div>
+                        <div class="bg-white p-2.5 rounded-lg border border-brown/10"><p class="text-brown/60">Price</p><p class="font-semibold text-forest tabular-nums">₹3,200</p></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-brown/10 flex items-center justify-between gap-4 text-xs text-brown/70">
+                    <span>Initial Pilot · Cuttack &amp; Nearby Areas, Odisha</span>
+                    <button type="button" data-open-modal="Buyer / Cultural Explorer" class="font-semibold text-terracotta hover:underline cursor-pointer">Join Pilot Waitlist →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problem & Solution -->
+        <section class="bg-white border-y border-brown/10 py-16 lg:py-24">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="max-w-2xl space-y-3">
+              <p class="text-sm font-semibold text-terracotta">Why Kalura Exists</p>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-forest tracking-tight" style="text-wrap: balance;">
+                Culture is everywhere. Discovery and trust shouldn’t be fragmented.
+              </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+              <div class="rounded-2xl bg-ivory/65 border border-brown/12 p-6 sm:p-8 space-y-5">
+                <div class="border-b border-brown/10 pb-4">
+                  <p class="text-xs font-semibold text-terracotta">Today’s Reality</p>
+                  <h3 class="text-xl font-bold text-brown mt-1">Where cultural makers and buyers get stuck</h3>
+                </div>
+                <div class="space-y-4 text-sm">
+                  <div><strong class="text-brown">01. Dependence on middlemen and fairs:</strong> <span class="text-brown/75">Artisans and cooks struggle for steady year-round visibility.</span></div>
+                  <div><strong class="text-brown">02. Language and smartphone barriers:</strong> <span class="text-brown/75">Marketplaces expect English typing and digital selling skills.</span></div>
+                  <div><strong class="text-brown">03. Scattered cultural discovery:</strong> <span class="text-brown/75">Crafts, cuisine, folk arts, and experiences live in separate places.</span></div>
+                  <div><strong class="text-brown">04. Buyer hesitation on authenticity and hygiene:</strong> <span class="text-brown/75">Without inspection, buyers worry about imitations and kitchen cleanliness.</span></div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl bg-forest text-ivory p-6 sm:p-8 space-y-5">
+                <div class="border-b border-white/15 pb-4">
+                  <p class="text-xs font-semibold text-gold">The Kalura Way</p>
+                  <h3 class="text-xl font-bold text-white mt-1">One verified home built for human craft and trust</h3>
+                </div>
+                <div class="space-y-4 text-sm">
+                  <div><strong class="text-white">01. Five linked cultural pillars:</strong> <span class="text-ivory/85">Kala, Rasa, Lok, Utsav, and Anubhav united on one platform.</span></div>
+                  <div><strong class="text-white">02. Inclusive onboarding—phone or no phone:</strong> <span class="text-ivory/85">Odia voice listings via app/WhatsApp, plus local representative visits.</span></div>
+                  <div><strong class="text-white">03. AI check + master-artisan sign-off:</strong> <span class="text-ivory/85">Verified texture, fair yarn-board pricing, and unique QR provenance.</span></div>
+                  <div><strong class="text-white">04. Daily live kitchen proof:</strong> <span class="text-ivory/85">Time- and GPS-stamped in-app kitchen captures before you order food.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Five Pillars & Core Features -->
+        <section id="pillars" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 space-y-12">
+          <div class="max-w-2xl space-y-3">
+            <p class="text-sm font-semibold text-terracotta">Five Linked Pillars</p>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-forest tracking-tight">Every letter in Kalura is a living pillar of heritage</h2>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="pillar-tabs">
+            <button type="button" data-pillar="kala" class="pillar-btn p-4 rounded-xl border text-left bg-forest text-white border-forest cursor-pointer">
+              <div class="flex justify-between"><span class="text-2xl font-extrabold text-gold font-display">K</span><span class="text-xs font-odia text-ivory/75">କଳା</span></div>
+              <p class="mt-2 text-base font-bold">Kala</p><p class="text-xs text-ivory/85">Crafts &amp; Handlooms</p>
+            </button>
+            <button type="button" data-pillar="rasa" class="pillar-btn p-4 rounded-xl border text-left bg-white text-brown border-brown/12 cursor-pointer">
+              <div class="flex justify-between"><span class="text-2xl font-extrabold text-terracotta font-display">R</span><span class="text-xs font-odia text-brown/55">ରସ</span></div>
+              <p class="mt-2 text-base font-bold">Rasa</p><p class="text-xs text-brown/70">Traditional Cuisine</p>
+            </button>
+            <button type="button" data-pillar="lok" class="pillar-btn p-4 rounded-xl border text-left bg-white text-brown border-brown/12 cursor-pointer">
+              <div class="flex justify-between"><span class="text-2xl font-extrabold text-terracotta font-display">L</span><span class="text-xs font-odia text-brown/55">ଲୋକ</span></div>
+              <p class="mt-2 text-base font-bold">Lok</p><p class="text-xs text-brown/70">Folk Arts</p>
+            </button>
+            <button type="button" data-pillar="utsav" class="pillar-btn p-4 rounded-xl border text-left bg-white text-brown border-brown/12 cursor-pointer">
+              <div class="flex justify-between"><span class="text-2xl font-extrabold text-terracotta font-display">U</span><span class="text-xs font-odia text-brown/55">ଉତ୍ସବ</span></div>
+              <p class="mt-2 text-base font-bold">Utsav</p><p class="text-xs text-brown/70">Festivals</p>
+            </button>
+            <button type="button" data-pillar="anubhav" class="pillar-btn p-4 rounded-xl border text-left bg-white text-brown border-brown/12 cursor-pointer">
+              <div class="flex justify-between"><span class="text-2xl font-extrabold text-terracotta font-display">A</span><span class="text-xs font-odia text-brown/55">ଅନୁଭବ</span></div>
+              <p class="mt-2 text-base font-bold">Anubhav</p><p class="text-xs text-brown/70">Experiences</p>
+            </button>
+          </div>
+
+          <div id="pillar-spotlight" class="bg-white rounded-2xl border border-brown/12 p-6 sm:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-4">
+              <p id="spotlight-kicker" class="text-sm font-medium text-terracotta">Pillar · Kala / କଳା</p>
+              <h3 id="spotlight-title" class="text-2xl sm:text-3xl font-bold text-forest">Traditional Crafts &amp; Handlooms</h3>
+              <p id="spotlight-summary" class="text-base text-brown/85 leading-relaxed">Discover Pattachitra scrolls, Cuttack Tarakasi silver filigree, terracotta, and Sambalpuri handlooms directly from verified artisan profiles with fair pricing.</p>
+            </div>
+            <div class="lg:col-span-5 bg-ivory/75 rounded-xl border border-brown/10 p-6 space-y-4">
+              <p class="text-xs font-semibold text-forest">What you can discover and book</p>
+              <div id="spotlight-examples" class="grid grid-cols-2 gap-3 text-sm font-medium text-brown">
+                <div class="bg-white px-3.5 py-2.5 rounded-lg border border-brown/10">Pattachitra</div>
+                <div class="bg-white px-3.5 py-2.5 rounded-lg border border-brown/10">Tarakasi Filigree</div>
+                <div class="bg-white px-3.5 py-2.5 rounded-lg border border-brown/10">Handloom Textiles</div>
+                <div class="bg-white px-3.5 py-2.5 rounded-lg border border-brown/10">Terracotta</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="features" class="pt-8 space-y-8">
+            <div class="max-w-2xl space-y-3">
+              <p class="text-sm font-semibold text-terracotta">Built-In Trust &amp; Access</p>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-forest tracking-tight">Designed for creators without barriers—and buyers without guesswork</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Odia Voice &amp; Assisted Onboarding</h3><p class="text-sm text-brown/80">Creators speak listing details in Odia via WhatsApp/app, or receive local representative visits if they have no smartphone.</p></article>
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Dual-Layer Authenticity &amp; QR</h3><p class="text-sm text-brown/80">AI checks texture and fair pricing alongside cooperative or master-weaver sign-off and a unique product QR record.</p></article>
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Daily Time- &amp; GPS-Stamped Proof</h3><p class="text-sm text-brown/80">Traditional food makers capture fresh live kitchen photos inside the app each day before buyers order.</p></article>
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Quality-Linked Seller Margins</h3><p class="text-sm text-brown/80">Consistent hygiene and verified craft quality earn seller points and higher margins per sale.</p></article>
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Fair Pricing &amp; Safe Packaging</h3><p class="text-sm text-brown/80">Built-in fair-price calculator, protective packaging, and platform-managed coordination keep every order safe.</p></article>
+              <article class="bg-white rounded-2xl border border-brown/12 p-6 space-y-3"><h3 class="text-lg font-bold text-forest">Origin Stories &amp; Workshops</h3><p class="text-sm text-brown/80">Every listing shares its maker’s story, district heritage, and option to book live craft demos or tours.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="bg-white border-y border-brown/10 py-16 lg:py-24">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div class="space-y-2">
+                <p class="text-sm font-semibold text-terracotta">How It Works</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-forest tracking-tight">Three clear steps from local craft to verified delivery</h2>
+              </div>
+              <div class="inline-flex p-1 bg-ivory rounded-xl border border-brown/12">
+                <button type="button" data-journey="buyer" class="journey-tab px-4 py-2 text-sm font-semibold rounded-lg bg-forest text-white cursor-pointer">For Buyers</button>
+                <button type="button" data-journey="creator" class="journey-tab px-4 py-2 text-sm font-semibold rounded-lg text-brown/75 cursor-pointer">For Creators</button>
+              </div>
+            </div>
+
+            <div id="journey-buyer" class="grid md:grid-cols-3 gap-6">
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 01</span><h3 class="text-lg font-bold text-forest">Discover by pillar, craft, or story</h3><p class="text-sm text-brown/80">Browse verified handlooms, traditional dishes, folk artists, and workshops curated across Cuttack and Odisha.</p></div>
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 02</span><h3 class="text-lg font-bold text-forest">Inspect live verification and origin</h3><p class="text-sm text-brown/80">Review master-artisan sign-off, QR provenance, or today’s time-stamped kitchen proof before you commit.</p></div>
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 03</span><h3 class="text-lg font-bold text-forest">Order or book with peace of mind</h3><p class="text-sm text-brown/80">Submit orders or workshop bookings on Kalura—protected by packaging standards and post-delivery photo checks.</p></div>
+            </div>
+
+            <div id="journey-creator" class="hidden grid md:grid-cols-3 gap-6">
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 01</span><h3 class="text-lg font-bold text-forest">Join via voice or local support</h3><p class="text-sm text-brown/80">Speak product details in Odia via WhatsApp/app, or schedule a local representative visit to photograph your work.</p></div>
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 02</span><h3 class="text-lg font-bold text-forest">Verify craft or daily kitchen</h3><p class="text-sm text-brown/80">Receive AI + master-weaver sign-off with a QR tag for crafts, or capture a quick daily live kitchen proof for food.</p></div>
+              <div class="rounded-2xl bg-ivory/60 border border-brown/12 p-6 space-y-3"><span class="text-2xl font-extrabold text-terracotta font-display tabular-nums">Step 03</span><h3 class="text-lg font-bold text-forest">Fulfill orders and grow margin</h3><p class="text-sm text-brown/80">Kalura coordinates buyer enquiries and protective packaging while quality points unlock higher earnings.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Vision & Odisha Ecosystem -->
+        <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 space-y-12">
+          <div class="max-w-2xl space-y-3">
+            <p class="text-sm font-semibold text-terracotta">Why Odisha · Initial Pilot in Cuttack</p>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-forest tracking-tight">Start focused in Cuttack. Prove trust locally. Grow across Odisha.</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl border border-brown/12 p-6 space-y-1"><p class="text-3xl font-extrabold text-terracotta font-display tabular-nums">1,77,113</p><p class="text-sm font-bold text-forest">Recorded Artisans</p><p class="text-xs text-brown/70">Across Odisha’s handicrafts sector</p></div>
+            <div class="bg-white rounded-2xl border border-brown/12 p-6 space-y-1"><p class="text-3xl font-extrabold text-terracotta font-display tabular-nums">64</p><p class="text-sm font-bold text-forest">Craft Categories</p><p class="text-xs text-brown/70">From Pattachitra to silver filigree</p></div>
+            <div class="bg-white rounded-2xl border border-brown/12 p-6 space-y-1"><p class="text-3xl font-extrabold text-terracotta font-display tabular-nums">150</p><p class="text-sm font-bold text-forest">Craft Clusters</p><p class="text-xs text-brown/70">Living workshops &amp; cooperatives</p></div>
+            <div class="bg-white rounded-2xl border border-brown/12 p-6 space-y-1"><p class="text-3xl font-extrabold text-terracotta font-display tabular-nums">38,299</p><p class="text-sm font-bold text-forest">Handicraft Units</p><p class="text-xs text-brown/70">Odisha Economic Survey 2025–26</p></div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="bg-white border-t border-brown/10 py-16 lg:py-24">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center space-y-2">
+              <p class="text-sm font-semibold text-terracotta">Common Questions</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-forest">Answers for buyers, artisans, and food makers</h2>
+            </div>
+            <div class="divide-y divide-brown/12 border-y border-brown/12" id="faq-list">
+              <div class="py-5">
+                <button type="button" class="faq-btn w-full flex items-center justify-between gap-4 text-left font-semibold text-forest cursor-pointer" aria-expanded="true">
+                  <span>Do artisans or traditional food makers need a smartphone to join Kalura?</span>
+                  <span class="faq-chevron text-terracotta transition-transform rotate-180">▾</span>
+                </button>
+                <div class="faq-answer pt-3 text-sm text-brown/80 leading-relaxed">No. Creators with smartphones can speak product details in Odia via WhatsApp or the Kalura app, while creators without phones are supported in person by trained local representatives and student volunteers.</div>
+              </div>
+              <div class="py-5">
+                <button type="button" class="faq-btn w-full flex items-center justify-between gap-4 text-left font-semibold text-forest cursor-pointer" aria-expanded="false">
+                  <span>How does Kalura verify that a craft or handloom product is authentic?</span>
+                  <span class="faq-chevron text-terracotta transition-transform">▾</span>
+                </button>
+                <div class="faq-answer hidden pt-3 text-sm text-brown/80 leading-relaxed">AI inspects thread texture, pattern, and fair pricing as decision support, followed by final sign-off from a local cooperative or master weaver and a unique QR verification record.</div>
+              </div>
+              <div class="py-5">
+                <button type="button" class="faq-btn w-full flex items-center justify-between gap-4 text-left font-semibold text-forest cursor-pointer" aria-expanded="false">
+                  <span>How does daily kitchen hygiene proof work for regional food orders?</span>
+                  <span class="faq-chevron text-terracotta transition-transform">▾</span>
+                </button>
+                <div class="faq-answer hidden pt-3 text-sm text-brown/80 leading-relaxed">Food makers capture a live kitchen photo or short video inside the Kalura app every day, automatically stamped with time and GPS coordinates so old photos cannot be reused.</div>
+              </div>
+              <div class="py-5">
+                <button type="button" class="faq-btn w-full flex items-center justify-between gap-4 text-left font-semibold text-forest cursor-pointer" aria-expanded="false">
+                  <span>Where is Kalura launching first, and how can I participate?</span>
+                  <span class="faq-chevron text-terracotta transition-transform">▾</span>
+                </button>
+                <div class="faq-answer hidden pt-3 text-sm text-brown/80 leading-relaxed">Kalura launches first in Cuttack and nearby areas of Odisha before expanding across additional districts. You can join early access as a buyer, creator, or local volunteer.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="rounded-3xl bg-forest text-ivory px-6 py-12 sm:px-12 sm:py-14 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div class="max-w-2xl space-y-3">
+              <p class="text-sm font-semibold text-gold">Cuttack &amp; Odisha Pilot</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white">Help shape Odisha’s first verified home for living culture.</h2>
+            </div>
+            <div class="flex flex-wrap gap-4 shrink-0">
+              <button type="button" data-open-modal="Buyer / Cultural Explorer" class="px-6 py-3.5 rounded-lg bg-gold text-forest text-sm font-bold cursor-pointer">Join Early Access</button>
+              <button type="button" data-open-modal="Creator / Artisan" class="px-6 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white text-sm font-semibold cursor-pointer">Partner as a Creator</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-brown/12 bg-ivory py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-brown/70">
+          <p class="font-semibold text-forest text-sm">Kalura — Connecting Culture · Empowering Creators · Preserving Heritage</p>
+          <p>© 2026 Kalura. Pilot in Cuttack, Odisha.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="access-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-brown/60 backdrop-blur-xs" role="dialog" aria-modal="true">
+      <div class="bg-white rounded-2xl border border-brown/15 shadow-xl w-full max-w-lg overflow-hidden">
+        <div class="px-6 py-5 bg-ivory border-b border-brown/10 flex items-center justify-between">
+          <div>
+            <p class="text-xs font-medium text-terracotta">Cuttack &amp; Odisha Early Access</p>
+            <h2 class="text-xl font-bold text-brown">Join the Kalura Pilot</h2>
+          </div>
+          <button type="button" id="close-modal" class="w-10 h-10 rounded-lg text-brown/70 hover:bg-brown/5 cursor-pointer">✕</button>
+        </div>
+        <form id="early-access-form" class="p-6 space-y-4">
+          <p id="form-error" class="hidden p-3 rounded-lg bg-terracotta/10 text-xs font-medium text-terracotta"></p>
+          <div>
+            <label for="f-role" class="block text-xs font-semibold text-brown mb-1">I am joining as</label>
+            <select id="f-role" class="w-full px-3.5 py-2.5 rounded-lg border border-brown/20 text-sm">
+              <option>Buyer / Cultural Explorer</option>
+              <option>Creator / Artisan</option>
+              <option>Traditional Food Maker</option>
+              <option>Folk Artist / Performer</option>
+              <option>Local Representative / Volunteer</option>
+            </select>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="f-name" class="block text-xs font-semibold text-brown mb-1">Full Name</label>
+              <input id="f-name" type="text" required placeholder="Ananya Das" class="w-full px-3.5 py-2.5 rounded-lg border border-brown/20 text-sm" />
+            </div>
+            <div>
+              <label for="f-contact" class="block text-xs font-semibold text-brown mb-1">Email or WhatsApp</label>
+              <input id="f-contact" type="text" required placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-lg border border-brown/20 text-sm" />
+            </div>
+          </div>
+          <div class="flex justify-end gap-3 pt-2">
+            <button type="button" id="cancel-modal" class="px-4 py-2.5 rounded-lg text-sm text-brown/75 cursor-pointer">Cancel</button>
+            <button type="submit" class="px-6 py-2.5 rounded-lg bg-terracotta text-white text-sm font-semibold cursor-pointer">Request Early Access</button>
+          </div>
+        </form>
+        <div id="form-success" class="hidden p-8 text-center space-y-4">
+          <h3 class="text-lg font-bold text-forest">You are on the Kalura list</h3>
+          <p class="text-sm text-brown/80">Thank you for joining the Cuttack &amp; Odisha cultural pilot. Our local team will reach out shortly.</p>
+          <button type="button" id="done-modal" class="w-full py-3 rounded-lg bg-forest text-white text-sm font-semibold cursor-pointer">Return to Kalura</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu
+      const menuBtn = document.getElementById('mobile-menu-toggle');
+      const drawer = document.getElementById('mobile-drawer');
+      menuBtn.addEventListener('click', () => {
+        const open = drawer.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        document.getElementById('menu-icon-open').classList.toggle('hidden', !open);
+        document.getElementById('menu-icon-close').classList.toggle('hidden', open);
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => drawer.classList.add('hidden'));
+      });
+
+      // Preview tabs
+      document.querySelectorAll('.preview-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.previewTab;
+          document.querySelectorAll('.preview-tab').forEach((t) => {
+            t.classList.remove('bg-forest', 'text-white');
+            t.classList.add('text-brown/75');
+          });
+          tab.classList.add('bg-forest', 'text-white');
+          tab.classList.remove('text-brown/75');
+          document.querySelectorAll('.preview-panel').forEach((p) => p.classList.add('hidden'));
+          document.getElementById('preview-' + target).classList.remove('hidden');
+        });
+      });
+
+      // Pillars interactive data
+      const pillarData = {
+        kala: { kicker: 'Pillar · Kala / କଳା', title: 'Traditional Crafts & Handlooms', summary: 'Discover Pattachitra scrolls, Cuttack Tarakasi silver filigree, terracotta, and Sambalpuri handlooms directly from verified artisan profiles with fair pricing.', examples: ['Pattachitra', 'Tarakasi Filigree', 'Handloom Textiles', 'Terracotta'] },
+        rasa: { kicker: 'Pillar · Rasa / ରସ', title: 'Regional Food & Cuisine', summary: 'Order authentic Poda Pitha, Chhenapoda, and heirloom Odia sweets backed by daily time- and GPS-stamped live kitchen hygiene proof.', examples: ['Poda Pitha', 'Chhenapoda', 'Traditional Sweets', 'Heirloom Recipes'] },
+        lok: { kicker: 'Pillar · Lok / ଲୋକ', title: 'Folk Arts & Performances', summary: 'Explore dedicated profiles for traditional musicians, folk dancers, and theatre troupes—making it effortless to enquire and book authentic cultural performances.', examples: ['Folk Music', 'Traditional Dance', 'Rural Theatre', 'Storytelling'] },
+        utsav: { kicker: 'Pillar · Utsav / ଉତ୍ସବ', title: 'Festivals & Living Traditions', summary: 'Follow Odisha’s seasonal cultural calendar, community rituals, and local heritage stories across Cuttack and neighbouring districts.', examples: ['Cultural Calendar', 'Seasonal Rituals', 'Community Stories', 'Craft Fairs'] },
+        anubhav: { kicker: 'Pillar · Anubhav / ଅନୁଭବ', title: 'Hands-On Cultural Experiences', summary: 'Book live artisan demonstrations, regional cooking workshops, and guided heritage walks led by the practitioners who keep each craft alive.', examples: ['Craft Demos', 'Food Workshops', 'Heritage Tours', 'Skill Sessions'] },
+      };
+
+      document.querySelectorAll('.pillar-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.pillar;
+          const item = pillarData[id];
+          document.querySelectorAll('.pillar-btn').forEach((b) => {
+            b.className = 'pillar-btn p-4 rounded-xl border text-left bg-white text-brown border-brown/12 cursor-pointer';
+          });
+          btn.className = 'pillar-btn p-4 rounded-xl border text-left bg-forest text-white border-forest cursor-pointer';
+          document.getElementById('spotlight-kicker').textContent = item.kicker;
+          document.getElementById('spotlight-title').textContent = item.title;
+          document.getElementById('spotlight-summary').textContent = item.summary;
+          document.getElementById('spotlight-examples').innerHTML = item.examples
+            .map((ex) => `<div class="bg-white px-3.5 py-2.5 rounded-lg border border-brown/10">${ex}</div>`)
+            .join('');
+        });
+      });
+
+      // Journey toggle
+      document.querySelectorAll('.journey-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.journey;
+          document.querySelectorAll('.journey-tab').forEach((t) => {
+            t.classList.remove('bg-forest', 'text-white');
+            t.classList.add('text-brown/75');
+          });
+          tab.classList.add('bg-forest', 'text-white');
+          document.getElementById('journey-buyer').classList.toggle('hidden', target !== 'buyer');
+          document.getElementById('journey-creator').classList.toggle('hidden', target !== 'creator');
+        });
+      });
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling;
+          const chevron = btn.querySelector('.faq-chevron');
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          answer.classList.toggle('hidden', expanded);
+          chevron.classList.toggle('rotate-180', !expanded);
+        });
+      });
+
+      // Modal
+      const modal = document.getElementById('access-modal');
+      const form = document.getElementById('early-access-form');
+      const successBox = document.getElementById('form-success');
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        form.classList.remove('hidden');
+        successBox.classList.add('hidden');
+        document.getElementById('form-error').classList.add('hidden');
+      };
+      document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.getElementById('f-role').value = btn.dataset.openModal;
+          modal.classList.remove('hidden');
+          drawer.classList.add('hidden');
+        });
+      });
+      document.getElementById('close-modal').addEventListener('click', closeModal);
+      document.getElementById('cancel-modal').addEventListener('click', closeModal);
+      document.getElementById('done-modal').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('f-name').value.trim();
+        const contact = document.getElementById('f-contact').value.trim();
+        const err = document.getElementById('form-error');
+        if (!name || !contact) {
+          err.textContent = 'Please provide your name and email or WhatsApp number.';
+          err.classList.remove('hidden');
+          return;
+        }
+        err.classList.add('hidden');
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+      });
+    </script>
+  </body>
+</html>
